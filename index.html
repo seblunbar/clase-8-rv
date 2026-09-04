@@ -147,7 +147,7 @@
     AFRAME.registerComponent('gestor-juego', {
       init: function () {
         this.puntos = 0;
-        this.segundosRestantes = 30;
+        this.segundosRestantes = 60;
         this.jugando = true;
 
         // Guardamos referencias a los textos del HUD para no buscarlos cada vez
@@ -178,7 +178,7 @@
 
       sumarPunto: function () {
         if (!this.jugando) return;
-        this.puntos++;
+        this.puntos += 2;
         this.hudPuntos.setAttribute('value', `Puntos: ${this.puntos}`);
       },
 
@@ -201,10 +201,10 @@
 
       reiniciar: function () {
         this.puntos = 0;
-        this.segundosRestantes = 30;
+        this.segundosRestantes = 60;
         this.jugando = true;
         this.hudPuntos.setAttribute('value', 'Puntos: 0');
-        this.hudTiempo.setAttribute('value', 'Tiempo: 30');
+        this.hudTiempo.setAttribute('value', 'Tiempo: 60');
         this.hudFinal.setAttribute('visible', false);
         this.botonReiniciar.setAttribute('visible', false);
         // Movemos el objetivo a un punto nuevo para empezar limpio
@@ -282,7 +282,7 @@
                 animation="property: scale; to: 1.15 1.15 1.15; dir: alternate; loop: true; dur: 500"></a-cylinder>
 
     <a-torus class="clickable objetivo" objetivo radius="0.28" radius-tubular="0.06"
-             material="shader: flat; color: #FF006E"
+             material="shader: flat; color: #FFFA6E"
              animation="property: rotation; to: 0 360 0; loop: true; dur: 4000"></a-torus>
 
     <!--
@@ -302,13 +302,10 @@
       que al tocarlas RESTAN un punto. Son cubos rojos que giran para que se
       distingan de las figuras buenas. Copia o borra líneas para tener más o menos.
     -->
-    <a-box class="clickable obstaculo" obstaculo depth="0.4" height="0.4" width="0.4"
-           material="shader: flat; color: #FF4136"
-           animation="property: rotation; to: 0 360 0; loop: true; dur: 4000"></a-box>
 
-    <a-box class="clickable obstaculo" obstaculo depth="0.4" height="0.4" width="0.4"
+    <a-box class="clickable obstaculo" obstaculo depth="0.3" height="0.3" width="0.3"
            material="shader: flat; color: #FF4136"
-           animation="property: rotation; to: 0 360 0; loop: true; dur: 4000"></a-box>
+           animation="property: rotation; to: 360 360 0; loop: true; dur: 2500"></a-box>
 
     <!--
       Botón de reiniciar: es un objeto normal del MUNDO (no de la cámara),
