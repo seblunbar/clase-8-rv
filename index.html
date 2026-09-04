@@ -8,7 +8,7 @@
 
   <script>
     // ==================================================================
-    // FUNCIONES DE APOYO
+    // FUNCIONES PRINCIPALES
     // ==================================================================
     function reproducirBeep(frecuencia) {
       const ctx = new (window.AudioContext || window.webkitAudioContext)();
@@ -34,7 +34,7 @@
     }
 
     // ==================================================================
-    // COMPONENTE: campo-estrellas
+    // ESTRELLAS
     // ==================================================================
     AFRAME.registerComponent('campo-estrellas', {
       schema: { cantidad: { type: 'number', default: 160 } },
@@ -57,7 +57,7 @@
     });
 
     // ==================================================================
-    // COMPONENTE: objetivo (SUMA PUNTOS)
+    // objetivo (SUMA PUNTOS)
     // ==================================================================
     AFRAME.registerComponent('objetivo', {
       init: function () {
@@ -87,7 +87,7 @@
     });
 
     // ==================================================================
-    // COMPONENTE: obstaculo (RESTA PUNTOS)
+    // obstaculo (RESTA PUNTOS)
     // ==================================================================
     AFRAME.registerComponent('obstaculo', {
       init: function () {
@@ -117,7 +117,7 @@
     });
 
     // ==================================================================
-    // COMPONENTE: gestor-juego (Control único de tiempo y puntaje)
+    // gestor-juego (Control de tiempo y puntaje)
     // ==================================================================
     AFRAME.registerComponent('gestor-juego', {
       init: function () {
@@ -239,11 +239,11 @@
                    animation="property: rotation; to: 360 360 0; loop: true; dur: 4000"></a-tetrahedron>
 
     <!-- OBSTÁCULOS (RESTAN PUNTOS) -->
-    <a-sphere class="clickable obstaculo" obstaculo radius="0.28" material="shader: flat; color: #FF4136"
+    <a-sphere class="clickable obstaculo" obstaculo radius="0.28" material="shader: flat; color: #FF0000"
               animation="property: scale; to: 1.15 1.15 1.15; dir: alternate; loop: true; dur: 300"></a-sphere>
 
     <a-box class="clickable obstaculo" obstaculo depth="0.3" height="0.3" width="0.3"
-           material="shader: flat; color: #FF4136"
+           material="shader: flat; color: #FF0000"
            animation="property: rotation; to: 0 360 0; loop: true; dur: 2500"></a-box>
 
     <!-- Botón Reiniciar -->
