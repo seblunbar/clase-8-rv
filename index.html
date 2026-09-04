@@ -294,8 +294,10 @@
     <a-triangle class="clickable objetivo" objetivo
                 vertex-a="0 0.4 0" vertex-b="-0.4 -0.3 0" vertex-c="0.4 -0.3 0"
                 material="shader: flat; color: #06D6A0; side: double"
-                animation="property: rotation; to: 0 360 0; loop: true; dur: 4000"></a-triangle>
+                animation="property: rotation; to: 360 0 0; loop: true; dur: 4000"></a-triangle>
 
+
+    
     <!--
       *** NUEVO *** FIGURAS QUE RESTAN
       Usan la clase "clickable obstaculo" y el componente "obstaculo", así
@@ -305,7 +307,7 @@
 
     <a-box class="clickable obstaculo" obstaculo depth="0.3" height="0.3" width="0.3"
            material="shader: flat; color: #FF4136"
-           animation="property: rotation; to: 360 360 0; loop: true; dur: 2500"></a-box>
+           animation="property: rotation; to: 0 360 0; loop: true; dur: 2500"></a-box>
 
     <!--
       Botón de reiniciar: es un objeto normal del MUNDO (no de la cámara),
